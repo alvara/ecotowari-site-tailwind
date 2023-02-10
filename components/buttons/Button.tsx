@@ -19,13 +19,13 @@ export default function Button({
   function selectVariant() {
     switch (variant) {
       case 'contained':
-        return 'btn btn-primary';
+        return 'btn-lg btn-primary';
       case 'outlined':
-        return 'btn btn-outline';
+        return 'btn-lg btn-outline';
       case 'text':
-        return 'btn btn-ghost';
+        return 'btn-lg btn-ghost';
       default:
-        return 'btn btn-primary';
+        return 'btn-lg btn-primary';
     }
   }
 
@@ -33,27 +33,28 @@ export default function Button({
   function selectColor() {
     switch (color) {
       case 'primary':
-        return 'btn btn-primary';
+        return 'btn-lg btn-primary';
       case 'secondary':
-        return 'btn btn-secondary';
+        return 'btn-lg btn-secondary';
       case 'accent':
-        return 'btn btn-accent';
+        return 'btn-lg btn-accent';
       case 'ghost':
-        return 'btn btn-ghost';
+        return 'btn-lg btn-ghost';
       case 'white':
-        return 'btn btn-white text-white hover:bg-white hover:text-primary';
+        return 'btn-lg btn-white text-white hover:bg-white hover:text-primary';
       default:
-        return 'btn btn-primary';
+        return 'btn-lg btn-accent';
     }
   }
 
   return (
     <div
-      className={`btn w-60 rounded-full ${selectVariant()} ${selectColor()} ${
+      className={`btn-lg flex w-60 cursor-pointer items-center justify-evenly rounded-full font-semibold duration-300  ${selectVariant()} ${selectColor()} ${
         fullWidth && 'btn-block'
       } ${className}`}
     >
-      {children}
+      <span className="mx-4">{children}</span>{' '}
+      <span className="text-2xl">›</span>
     </div>
   );
 }
