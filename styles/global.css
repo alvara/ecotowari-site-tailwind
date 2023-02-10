@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './header.css';
+
+@layer base {
+  h1 {
+    @apply text-6xl;
+    margin-bottom: 0.5em;
+  }
+  h2 {
+    @apply mb-4 mt-12 
+    text-4xl 
+    font-extrabold 
+    tracking-tight 
+    text-gray-900;
+  }
+
+  h3 {
+    @apply mt-8 mb-2 text-xl;
+    @apply text-gray-900;
+  }
+
+  p {
+    @apply font-normal text-gray-500 sm:text-lg;
+  }
+
+  a {
+    @apply text-blue-500;
+  }
+
+  ul {
+    @apply list-inside list-disc;
+  }
+
+  table {
+    @apply table-auto border-gray-300;
+  }
+
+  th {
+    @apply border border-gray-300;
+  }
+
+  td {
+    @apply border border-gray-300 px-4 py-2;
+  }
+}
+
+/* TYPOGRAPHY */
+.rnr-bold {
+  @apply font-black text-zinc-900;
+}
+
+/* Style if table headers applied in notion */
+table.has-column-header tbody tr:first-child {
+  @apply bg-gray-100;
+}
+
+table.has-row-header tbody > tr > td:nth-of-type(1) {
+  @apply bg-gray-100;
+}
+
+blockquote {
+  border: none;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin-bottom: -30px;
+  quotes: '\201C''\201D''\2018''\2019';
+}
+
+li {
+  @apply font-normal text-gray-500 sm:text-lg;
+}
