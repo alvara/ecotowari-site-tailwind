@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './header.css';
 
 @layer base {
   h1 {
@@ -69,4 +68,8 @@ blockquote {
 
 li {
   @apply font-normal text-gray-500 sm:text-lg;
+}
+
+.btn {
+  @apply w-fit bg-opacity-100;
 }
