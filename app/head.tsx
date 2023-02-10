@@ -23,13 +23,6 @@ export default function Head() {
         href="/favicons/favicon-16x16.png"
       ></link>
       <link rel="manifest" href="/favicons/site.webmanifest"></link>
-
-      {/* <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-      <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-      <link
-        href="https://fonts.googleapis.com/css?family=Lato:300:400&display=swap"
-        rel="stylesheet"
-      ></link> */}
     </>
   );
 }
