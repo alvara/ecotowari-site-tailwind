@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Button from '../buttons/Button';
-import MainLogo from '../Icon';
 import NavbarToggleButton from './NavbarToggleButton';
 import NavMenu from './NavMenu';
 
@@ -11,11 +10,9 @@ export default function NavbarSimple() {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn-ghost btn text-xl normal-case text-zinc-900"
+            className="btn-ghost btn text-4xl normal-case text-primary"
           >
-            <MainLogo className="w-12" />
             ecotowari
-            {/* <Image src={signature} className="w-32" alt="Jesse Alvarado" /> */}
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
