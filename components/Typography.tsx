@@ -43,17 +43,17 @@ export const Typography: FC<
   }
   // for underneath large headings (h1, h2, h3)
   if (variant === 'subtitle1') {
-    className = `${className} text-gray-600 font-semibold  text-2xl`;
+    className = `${className}  font-semibold  text-2xl`;
   }
   // for underneath small headings (card headings, etc.)
   if (variant === 'subtitle2') {
-    className = `${className} text-gray-500`;
+    className = `${className} `;
   }
   if (variant === 'caption') {
-    className = `${className} text-sm text-stone-300`;
+    className = `${className} text-sm `;
   }
   if (variant === 'small') {
-    className = `${className} text-sm text-stone-400 leading-3`;
+    className = `${className} text-sm`;
   }
 
   return (
