@@ -5,9 +5,7 @@
   "author": "Jesse Alvarado <contact@jessealvarado.com>",
   "engines": {
     "node": ">=14.17.0",
-    "npm": "please use yarn",
-    "pnpm": "please use npm",
-    "pn": "please use npm"
+    "npm": "please use yarn"
   },
   "scripts": {
     "dev": "next dev",
