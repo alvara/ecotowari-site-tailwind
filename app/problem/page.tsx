@@ -59,14 +59,14 @@ export default async function Page() {
             The lifecycle of flyers
           </Typography>
         </div>
-        <div className="col-span-3 mx-auto lg:col-span-2">
+        <div className="col-span-3 mx-auto xl:col-span-2">
           <Image
             src={flyerLifecycleImg}
             alt="Lifecycle of a flyer"
             className="rounded-lg lg:pr-32"
           />
         </div>
-        <div className="col-span-2 flex flex-col justify-start lg:col-span-1">
+        <div className="col-span-3 flex flex-col justify-start xl:col-span-1">
           <Typography variant="h3" lineBreak className="text-xl">
             The overall environmental footprint of a flyer can be decomposed as:
           </Typography>
