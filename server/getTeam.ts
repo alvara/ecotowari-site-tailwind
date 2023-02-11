@@ -1,3 +1,5 @@
+import 'server-only';
+
 import Airtable from 'airtable';
 import { IAirtableImage, ITeam } from '../type';
 

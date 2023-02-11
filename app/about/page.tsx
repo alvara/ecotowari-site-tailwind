@@ -1,5 +1,5 @@
 import HeroTitleOnly from '@/components/heroes/HeroTitleOnly';
-import { getInstagram } from '@/services/repository/getInstagram';
+import { getInstagram } from 'server/getInstagram';
 import FollowUsSection from '@/features/Sections/FollowUsSection';
 import Section from '@/components/Section';
 import { Typography } from '@/components/Typography';
@@ -13,7 +13,7 @@ import {
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-import { getTeam } from '@/services/repository/getTeam';
+import { getTeam } from 'server/getTeam';
 import {
   faFacebook,
   faInstagram,
@@ -79,9 +79,9 @@ export default async function Page() {
             in the United Nations&apos; Sustainable Development Goals.
           </Typography>
           <Typography variant="p">
-            We also often hear that climate action implies sacrifices. It's just
-            not true! Less can be more, especially when it comes to waste. Less
-            waste, more realness!
+            We also often hear that climate action implies sacrifices. It&apos;s
+            just not true! Less can be more, especially when it comes to waste.
+            Less waste, more realness!
           </Typography>
           <Typography variant="p">Let&apos;s all do what we can!</Typography>
         </div>

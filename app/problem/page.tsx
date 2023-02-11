@@ -1,5 +1,5 @@
 import HeroTitleOnly from '@/components/heroes/HeroTitleOnly';
-import { getInstagram } from '@/services/repository/getInstagram';
+import { getInstagram } from 'server/getInstagram';
 import FollowUsSection from '@/features/Sections/FollowUsSection';
 import Section from '@/components/Section';
 import { Typography } from '@/components/Typography';

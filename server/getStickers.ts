@@ -1,3 +1,5 @@
+import 'server-only';
+
 import Airtable from 'airtable';
 import { ISticker } from '../type';
 
