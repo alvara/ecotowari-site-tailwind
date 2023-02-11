@@ -21,9 +21,16 @@ export default function NavbarSimple() {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link href="/contact">
-            <Button className="invisible lg:visible">Let&apos;s Talk</Button>
-          </Link>
+          <a href="/#sticker">
+            <Button
+              variant="contained"
+              className="invisible lg:visible"
+              size="btn-md"
+            >
+              Get a sticker
+            </Button>
+          </a>
+
           <div className="dropdown-end dropdown">
             <NavbarToggleButton />
             <ul
