@@ -19,7 +19,7 @@ export default function Drawer({ id, children }: IDrawerProps) {
       <div className="drawer-side">
         <label htmlFor={id} className="drawer-overlay"></label>
         {/* Sidebar Content */}
-        <ul className="menu w-80 justify-center gap-16 bg-base-100 p-4 text-center align-middle text-base-content">
+        <ul className="menu w-80 justify-center gap-8 bg-base-100 p-4 text-center align-middle text-base-content">
           <li className="menu-title">
             <span>Menu</span>
           </li>
