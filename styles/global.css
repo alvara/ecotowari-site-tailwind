@@ -44,6 +44,12 @@
   }
 }
 
+/* NEXTJS BUG FIX: Anchor links jump smoothly */
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
 /* TYPOGRAPHY */
 .rnr-bold {
   @apply font-black text-zinc-900;

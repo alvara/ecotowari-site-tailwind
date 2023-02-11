@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { Typography } from './Typography';
 import mailboxImg from '../assets/mailbox-split.png';
 import Button from './buttons/Button';
-import Link from 'next/link';
 
 export default function Header() {
   return (
@@ -23,11 +22,14 @@ export default function Header() {
               Free your mailbox from unsolicited flyers with this real-life spam
               filter!
             </Typography>
-            <Link href={'/#sticker'}>
-              <Button variant="contained" className="mx-auto lg:mx-0">
+            <a href={'/#sticker'}>
+              <Button
+                variant="contained"
+                className="relative mx-auto w-60 lg:mx-0"
+              >
                 Get a sticker
               </Button>
-            </Link>
+            </a>
           </div>
           <div className="flex-1">
             <div className="mx-auto max-w-md lg:max-w-2xl">

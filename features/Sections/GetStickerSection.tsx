@@ -6,7 +6,10 @@ import MailingListForm from '../forms/MailingListForm';
 
 export function GetStickerSection() {
   return (
-    <Section backgroundColor="bg-gradient-to-r from-primary to-secondary">
+    <Section
+      id="sticker"
+      backgroundColor="bg-gradient-to-r from-primary to-secondary"
+    >
       <Typography variant="h2" className="text-center text-white" border>
         You can help
       </Typography>

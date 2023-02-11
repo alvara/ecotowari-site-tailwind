@@ -14,6 +14,7 @@ export interface ISectionProps {
   yMargins?: string;
   noMargins?: boolean;
   backgroundColor?: string;
+  id?: string;
 }
 
 export default function Section({
@@ -24,9 +25,10 @@ export default function Section({
   yMargins = 'py-24 lg:py-48',
   noMargins = false,
   className,
+  id,
 }: ISectionProps) {
   return (
-    <div className={`${backgroundColor}`}>
+    <div id={id} className={`${backgroundColor}`}>
       <section
         className={`container grid  ${rows} ${columns}  mx-auto max-w-screen-xl  gap-8  px-4 ${
           !noMargins && yMargins
