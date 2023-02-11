@@ -102,7 +102,7 @@ export default async function Page() {
           <Image
             src={flyerLifecycleImg}
             alt="Lifecycle of a flyer"
-            className="rounded-lg lg:pr-32"
+            className="rounded-lg xl:pr-32"
           />
         </div>
         <div className="col-span-3 flex flex-col justify-start xl:col-span-1">
