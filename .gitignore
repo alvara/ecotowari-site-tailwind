@@ -45,3 +45,6 @@ out
 .DS_Store
 tsconfig.tsbuildinfo
 .vercel
+
+# Local Netlify folder
+.netlify
