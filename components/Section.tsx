@@ -32,7 +32,7 @@ export default function Section({
       <section
         className={`container grid  ${rows} ${columns} mx-auto max-w-screen-xl  gap-8  px-4 ${
           !noMargins && yMargins
-        }  ${className} `}
+        }  ${className}`}
       >
         {children}
       </section>
