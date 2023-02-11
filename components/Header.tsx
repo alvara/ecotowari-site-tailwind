@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <div className="bg-hero bg-contain bg-fixed">
+    <div className="bg-hero bg-cover bg-fixed lg:bg-contain">
       <div className="bg-gradient-to-b from-primary/90 to-secondary/90">
         <div className="min-h-60 container mx-auto flex flex-col-reverse py-16 text-center lg:flex-row lg:text-left ">
           <div className="flex flex-1 flex-col justify-center gap-6 text-left lg:pr-16">
@@ -30,7 +30,7 @@ export default function Header() {
             </Link>
           </div>
           <div className="flex-1">
-            <div className="mx-auto max-w-md lg:max-w-none">
+            <div className="mx-auto max-w-md lg:max-w-2xl">
               <Image
                 src={mailboxImg}
                 alt="Mailbox Improvement"
