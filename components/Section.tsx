@@ -18,17 +18,17 @@ export interface ISectionProps {
 
 export default function Section({
   children,
-  columns = 'lg:grid-cols-1',
-  rows = 'lg:grid-rows-1',
+  columns = '',
+  rows = '',
   backgroundColor = 'bg-base-100',
-  yMargins = 'py-24 lg:py-52',
+  yMargins = 'py-24 lg:py-48',
   noMargins = false,
   className,
 }: ISectionProps) {
   return (
     <div className={`${backgroundColor}`}>
       <section
-        className={`container grid grid-cols-1  ${rows} ${columns}  mx-auto max-w-screen-xl  gap-8  px-4 ${
+        className={`container grid  ${rows} ${columns}  mx-auto max-w-screen-xl  gap-8  px-4 ${
           !noMargins && yMargins
         }  ${className} `}
       >
