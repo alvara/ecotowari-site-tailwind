@@ -7,26 +7,30 @@ export interface IButtonProps {
   color?: 'primary' | 'secondary' | 'accent' | 'ghost' | 'white';
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  size?: 'btn-sm' | 'btn-md' | 'btn-lg';
+  onClick?: () => void;
 }
 
 export default function Button({
   children,
   variant = 'outlined',
-  fullWidth,
+  fullWidth = false,
   color = 'primary',
   className,
+  size = 'btn-lg',
+  onClick,
 }: IButtonProps) {
   // determine classes for button variant
   function selectVariant() {
     switch (variant) {
       case 'contained':
-        return 'btn-lg btn-accent';
+        return 'btn-accent';
       case 'outlined':
-        return 'btn-lg btn-outline';
+        return 'btn-outline';
       case 'text':
-        return 'btn-lg btn-ghost';
+        return 'btn-ghost';
       default:
-        return 'btn-lg btn-primary';
+        return 'btn-primary';
     }
   }
 
@@ -34,27 +38,28 @@ export default function Button({
   function selectColor() {
     switch (color) {
       case 'primary':
-        return 'btn-lg btn-accent';
+        return 'btn-accent';
       case 'secondary':
-        return 'btn-lg btn-secondary';
+        return 'btn-secondary';
       case 'accent':
-        return 'btn-lg btn-accent';
+        return 'btn-accent';
       case 'ghost':
-        return 'btn-lg btn-ghost';
+        return 'btn-ghost';
       case 'white':
-        return 'btn-lg btn-white text-white hover:bg-white hover:text-primary';
+        return 'btn-white text-white hover:bg-white hover:text-primary';
       default:
-        return 'btn-lg btn-accent';
+        return 'btn-accent';
     }
   }
 
   return (
     <div
-      className={`btn-lg flex w-60 cursor-pointer items-center justify-evenly rounded-full font-semibold text-white duration-300 ${selectVariant()} ${selectColor()} ${
+      onClick={onClick}
+      className={`${size} flex cursor-pointer items-center justify-between rounded-full font-semibold text-white duration-300 ${selectVariant()} ${selectColor()} ${
         fullWidth && 'btn-block'
       } ${className}`}
     >
-      <span className="mx-4">{children}</span>{' '}
+      <span className="mx-4 flex-1 text-center">{children}</span>
       <span className="text-2xl">›</span>
     </div>
   );
