@@ -10,8 +10,6 @@ import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 
 export default function ContactForm() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const [modalIsOpen, setIsOpen] = useState(false);
 
   const FormSchema = yup.object({
@@ -28,6 +26,7 @@ export default function ContactForm() {
   });
 
   function onSubmit(formData) {
+    const { email, message } = formData;
     console.log('formData', formData);
     async function postContact() {
       try {
@@ -38,8 +37,6 @@ export default function ContactForm() {
           data: { email, message },
         }).then(() => {
           console.log('success submit..');
-          setEmail('');
-          setMessage('');
           openModal();
           reset();
         });
@@ -89,7 +86,6 @@ export default function ContactForm() {
               {...register('email')}
               placeholder="example@example.com"
               className="input input-lg w-full border border-gray-200 text-gray-800"
-              onChange={(e) => setEmail(e.currentTarget.value)}
             />
             {formState.errors.email && (
               <Typography variant="p" className="text-red-500">
@@ -109,7 +105,6 @@ export default function ContactForm() {
               {...register('message')}
               className="textarea-bordered textarea textarea-lg mb-4 h-48 w-full border border-gray-200 text-gray-800"
               placeholder="Enter your message"
-              onChange={(e) => setMessage(e.currentTarget.value)}
             ></textarea>
             {formState.errors.email && (
               <Typography variant="p" className="text-red-500">
