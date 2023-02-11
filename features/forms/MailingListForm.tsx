@@ -28,11 +28,11 @@ export default function MailingListForm() {
     const { email } = formData;
     async function postEmail() {
       try {
-        const data = await axios({
+        await axios({
           method: 'POST',
           url: '/api/mailinglist/',
           data: { email },
-        }).then((res) => {
+        }).then(() => {
           console.log('success submit..');
           openModal();
           reset();

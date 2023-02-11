@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
-import { IInstagram } from '../../services/type';
+import { IInstagram } from '../../type';
 import Link from 'next/link';
 import { Typography } from '@/components/Typography';
 import Section from '@/components/Section';
@@ -30,7 +30,7 @@ export default function FollowUsSection({
         <div className="mx-auto mb-4 text-center ">
           <Link href="https://www.instagram.com/ecotowari/" target="_window">
             <FontAwesomeIcon
-              icon={faInstagram as any}
+              icon={faInstagram}
               size="lg"
               className="mx-2 rounded-full bg-accent p-6 text-4xl text-white"
             />
@@ -38,7 +38,7 @@ export default function FollowUsSection({
 
           <Link href={`https://www.facebook.com/ecotowari`} target="_window">
             <FontAwesomeIcon
-              icon={faFacebook as any}
+              icon={faFacebook}
               size="lg"
               className="mx-2 rounded-full bg-accent p-6 text-4xl text-white"
             />
