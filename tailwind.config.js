@@ -29,7 +29,7 @@ module.exports = {
         myTheme: {
           primary: '#2a9350e6',
           secondary: '#156f5ce6',
-          accent: '#22904b',
+          accent: '#32c049',
         },
       },
     ],
