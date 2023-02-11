@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Button from '../buttons/Button';
-import NavbarToggleButton from './NavbarToggleButton';
+import DrawerTrigger from '../drawer/DrawerTrigger';
 import NavMenu from './NavMenu';
 
 export default function NavbarSimple() {
@@ -31,15 +31,22 @@ export default function NavbarSimple() {
             </Button>
           </a>
 
-          <div className="dropdown-end dropdown">
-            <NavbarToggleButton />
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu rounded-box mt-4 w-52 bg-base-100 p-2 text-slate-900 shadow"
+          <DrawerTrigger id="my-drawer" className="lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <NavMenu />
-            </ul>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </DrawerTrigger>
         </div>
       </div>
     </>
