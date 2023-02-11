@@ -1,17 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './header.css';
 
 @layer base {
   h1 {
-    @apply text-6xl;
-    margin-bottom: 0.5em;
+    @apply text-4xl font-semibold lg:text-6xl;
   }
   h2 {
-    @apply mb-4 mt-12 
+    @apply mb-4
     text-4xl 
-    font-extrabold 
+    font-bold 
     tracking-tight 
     text-gray-900;
   }
@@ -22,11 +20,11 @@
   }
 
   p {
-    @apply font-normal text-gray-500 sm:text-lg;
+    @apply font-normal text-gray-700 sm:text-xl;
   }
 
   a {
-    @apply text-blue-500;
+    @apply text-accent;
   }
 
   ul {
@@ -69,4 +67,8 @@ blockquote {
 
 li {
   @apply font-normal text-gray-500 sm:text-lg;
+}
+
+.btn {
+  @apply w-fit bg-opacity-100;
 }

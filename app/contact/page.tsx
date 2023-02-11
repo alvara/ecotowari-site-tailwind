@@ -1,16 +1,32 @@
+import HeroTitleOnly from '@/components/heroes/HeroTitleOnly';
 import Section from '@/components/Section';
 import { Typography } from '@/components/Typography';
+import ContactForm from '@/features/forms/ContactForm';
 
-export default async function ContactPage() {
+export const revalidate = 30; // revalidate every 30 seconds
+
+export default async function Page() {
   return (
-    <Section columns="md:grid-cols-2 lg:grid-cols-3" noMargins={true}>
-      <div className="md:col-span-2 lg:col-span-3">
-        <Typography variant="h2">Let&apos;s talk</Typography>
-        <Typography variant="body1" lineBreak>
-          Let&apos;s talk and discuss how I can help you and your business.
-        </Typography>
-        test
-      </div>
-    </Section>
+    <>
+      <HeroTitleOnly title="Contact Us" />
+
+      <Section className="grid-cols-5">
+        <div className="col-span-5 md:col-span-3 md:col-start-2">
+          <Typography variant="h2" border className="text-center">
+            We are here for you!
+          </Typography>
+          <Typography variant="p" lineBreak>
+            If you have any questions or comments and you&apos;d like to get in
+            touch with the ecotowari team, please fill in the following form.
+          </Typography>
+          <Typography variant="p">
+            We will do our best to get back to as soon as we can. Thank you!
+          </Typography>
+          <div className="m-8">
+            <ContactForm />
+          </div>
+        </div>
+      </Section>
+    </>
   );
 }

@@ -10,6 +10,21 @@ export interface ISticker {
   };
 }
 
+export interface ITeam {
+  id: number;
+  name: string;
+  email?: string;
+  linkedin?: string;
+  facebook?: string;
+  instagram?: string;
+  twitter?: string;
+  github?: string;
+  website?: string;
+  role: string;
+  avatar: IAirtableImage[];
+  bio: string;
+}
+
 export interface IInstagram {
   id: number;
   image: IAirtableImage[];

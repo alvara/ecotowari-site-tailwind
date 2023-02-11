@@ -8,11 +8,6 @@ module.exports = {
   },
   images: {
     formats: ['image/webp'],
-    domains: [
-      'via.placeholder.com',
-      'placehold.jp',
-      'cdn.sanity.io',
-      's3.us-west-2.amazonaws.com',
-    ],
+    domains: ['v5.airtableusercontent.com'],
   },
 };

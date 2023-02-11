@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Button from '../buttons/Button';
-import MainLogo from '../Icon';
-import NavbarToggleButton from './NavbarToggleButton';
+import DrawerTrigger from '../drawer/DrawerTrigger';
 import NavMenu from './NavMenu';
 
 export default function NavbarSimple() {
@@ -11,11 +10,9 @@ export default function NavbarSimple() {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn-ghost btn text-xl normal-case text-zinc-900"
+            className="btn-ghost btn text-4xl normal-case text-primary"
           >
-            <MainLogo className="w-12" />
             ecotowari
-            {/* <Image src={signature} className="w-32" alt="Jesse Alvarado" /> */}
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
@@ -24,18 +21,32 @@ export default function NavbarSimple() {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link href="/contact">
-            <Button className="invisible lg:visible">Let&apos;s Talk</Button>
-          </Link>
-          <div className="dropdown-end dropdown">
-            <NavbarToggleButton />
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu rounded-box mt-4 w-52 bg-base-100 p-2 text-slate-900 shadow"
+          <a href="/#sticker">
+            <Button
+              variant="contained"
+              className="invisible lg:visible"
+              size="btn-md"
             >
-              <NavMenu />
-            </ul>
-          </div>
+              Get a sticker
+            </Button>
+          </a>
+
+          <DrawerTrigger id="my-drawer" className="lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </DrawerTrigger>
         </div>
       </div>
     </>

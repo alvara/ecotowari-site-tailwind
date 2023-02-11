@@ -22,7 +22,8 @@
       "@/services/*": ["services/*"],
       "@/features/*": ["features/*"],
       "@/lib/*": ["lib/*"],
-      "@/helpers/*": ["helpers/*"]
+      "@/helpers/*": ["helpers/*"],
+      "@/assets/*": ["assets/*"]
     },
     "types": ["react/next", "react-dom/next"],
     "plugins": [

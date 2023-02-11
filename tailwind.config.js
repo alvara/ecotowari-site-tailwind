@@ -10,7 +10,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Lato', 'Arial', 'sans-serif'],
+        sans: ['Nunito', 'Arial', 'sans-serif'],
+      },
+      height: {
+        60: '50vh',
       },
       container: {
         padding: '2rem',
@@ -24,9 +27,9 @@ module.exports = {
     themes: [
       {
         myTheme: {
-          primary: '#32c049',
-          secondary: '#37b44b',
-          accent: '#22904b',
+          primary: '#2a9350e6',
+          secondary: '#156f5ce6',
+          accent: '#32c049',
         },
       },
     ],

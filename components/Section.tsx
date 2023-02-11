@@ -13,24 +13,26 @@ export interface ISectionProps {
   rows?: string;
   yMargins?: string;
   noMargins?: boolean;
-  backgroundColor?: string;
+  backgroundColor?: 'bg-white' | 'bg-slate-50' | string;
+  id?: string;
 }
 
 export default function Section({
   children,
-  columns = 'lg:grid-cols-1',
-  rows = 'lg:grid-rows-1',
-  backgroundColor = 'bg-base-100',
-  yMargins = 'py-24 lg:py-52',
+  columns = '',
+  rows = '',
+  backgroundColor = 'bg-white',
+  yMargins = 'py-24 lg:py-48',
   noMargins = false,
   className,
+  id,
 }: ISectionProps) {
   return (
-    <div className={`${backgroundColor}`}>
+    <div id={id} className={`${backgroundColor}`}>
       <section
-        className={`container grid grid-cols-1  ${rows} ${columns}  mx-auto max-w-screen-xl  gap-8  px-4 ${
+        className={`container grid  ${rows} ${columns} mx-auto max-w-screen-xl  gap-8  px-4 ${
           !noMargins && yMargins
-        }  ${className} `}
+        }  ${className}`}
       >
         {children}
       </section>
