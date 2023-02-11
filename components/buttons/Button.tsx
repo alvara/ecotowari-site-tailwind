@@ -18,6 +18,7 @@ export default function Button({
   color = 'primary',
   className,
   size = 'btn-lg',
+  type = 'button',
   onClick,
 }: IButtonProps) {
   // determine classes for button variant
@@ -53,7 +54,8 @@ export default function Button({
   }
 
   return (
-    <div
+    <button
+      type={type}
       onClick={onClick}
       className={`${size} flex cursor-pointer items-center justify-between rounded-full font-semibold text-white duration-300 ${selectVariant()} ${selectColor()} ${
         fullWidth && 'btn-block'
@@ -61,6 +63,6 @@ export default function Button({
     >
       <span className="mx-4 flex-1 text-center">{children}</span>
       <span className="text-2xl">›</span>
-    </div>
+    </button>
   );
 }
