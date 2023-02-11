@@ -103,6 +103,8 @@ export default async function Page() {
             src={flyerLifecycleImg}
             alt="Lifecycle of a flyer"
             className="rounded-lg xl:pr-32"
+            quality={30}
+            placeholder="blur"
           />
         </div>
         <div className="col-span-3 flex flex-col justify-start xl:col-span-1">
@@ -205,6 +207,8 @@ export default async function Page() {
             src={mailBoxesSolution}
             alt="Mailboxes full of flyers"
             className="rounded-lg"
+            quality={15}
+            placeholder="blur"
           />
         </div>
         <div className="col-span-2 ">
