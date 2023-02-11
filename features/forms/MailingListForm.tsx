@@ -68,7 +68,7 @@ export default function MailingListForm() {
         <Button
           variant="contained"
           type="submit"
-          className="flex-2 btn text-white"
+          className="flex-2 btn capitalize text-white"
         >
           Send
         </Button>
