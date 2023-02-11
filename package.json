@@ -42,7 +42,8 @@
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/react-fontawesome": "^0.1.17",
     "react-countup": "^6.3.0",
-    "react-visibility-sensor": "^5.1.1"
+    "react-visibility-sensor": "^5.1.1",
+    "react-modal": "^3.16.1"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.3.1",
