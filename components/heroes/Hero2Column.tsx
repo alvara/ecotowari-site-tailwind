@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { Typography } from './Typography';
-import mailboxImg from '../assets/mailbox-split.png';
-import Button from './buttons/Button';
+import { Typography } from '../Typography';
+import mailboxImg from '@/assets/mailbox-split.png';
+import Button from '@/components/buttons/Button';
 
-export default function Header() {
+export default function Hero2Column() {
   return (
     <div className="bg-hero bg-cover bg-fixed lg:bg-contain">
       <div className="bg-gradient-to-b from-primary/90 to-secondary/90">

@@ -1,4 +1,4 @@
-import Header from '@/components/Header';
+import Hero2Column from '@/components/heroes/Hero2Column';
 import IntroSection from '@/features/Sections/IntroSection';
 import { GetStickerSection } from '@/features/Sections/GetStickerSection';
 import StatisticsSection from '@/features/Sections/StatisticsSection';
@@ -14,7 +14,7 @@ export default async function Page() {
 
   return (
     <>
-      <Header />
+      <Hero2Column />
       <IntroSection />
       <StatisticsSection stickers={stickers} />
       <GetStickerSection />
