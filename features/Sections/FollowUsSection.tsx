@@ -13,7 +13,11 @@ interface IFollowUs {
 }
 export default function FollowUsSection({ instagram }: IFollowUs) {
   return (
-    <Section className="" columns=" lg:grid-cols-4">
+    <Section
+      backgroundColor="bg-slate-50"
+      className=""
+      columns=" lg:grid-cols-4"
+    >
       <div className="col-span-2 lg:col-span-4">
         <Typography variant="h2" className="text-center" border>
           Follow us

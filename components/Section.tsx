@@ -13,7 +13,7 @@ export interface ISectionProps {
   rows?: string;
   yMargins?: string;
   noMargins?: boolean;
-  backgroundColor?: string;
+  backgroundColor?: 'bg-white' | 'bg-slate-50' | string;
   id?: string;
 }
 
@@ -21,7 +21,7 @@ export default function Section({
   children,
   columns = '',
   rows = '',
-  backgroundColor = 'bg-base-100',
+  backgroundColor = 'bg-white',
   yMargins = 'py-24 lg:py-48',
   noMargins = false,
   className,
@@ -30,7 +30,7 @@ export default function Section({
   return (
     <div id={id} className={`${backgroundColor}`}>
       <section
-        className={`container grid  ${rows} ${columns}  mx-auto max-w-screen-xl  gap-8  px-4 ${
+        className={`container grid  ${rows} ${columns} mx-auto max-w-screen-xl  gap-8  px-4 ${
           !noMargins && yMargins
         }  ${className} `}
       >
