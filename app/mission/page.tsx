@@ -47,7 +47,7 @@ export default async function Page() {
             src={mailBoxesFullImg}
             alt="Mailboxes full of flyers"
             className="rounded-lg"
-            quality={40}
+            quality={15}
             placeholder="blur"
           />
         </div>
@@ -65,7 +65,7 @@ export default async function Page() {
             src={mailBoxesQuickFixImg}
             alt="Mailboxes full of flyers"
             className="rounded-lg"
-            quality={40}
+            quality={15}
             placeholder="blur"
           />
         </div>
@@ -137,7 +137,7 @@ export default async function Page() {
             src={mailBoxesSolution}
             alt="Mailboxes full of flyers"
             className="rounded-lg"
-            quality={40}
+            quality={15}
             placeholder="blur"
           />
         </div>
