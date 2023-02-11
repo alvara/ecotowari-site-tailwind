@@ -8,7 +8,14 @@ import flyerLifecycleImg from '@/assets/flyer-lifecycle-trimmy.png';
 import mailBoxesSolution from '@/assets/mailboxes-ecotowari-solution.png';
 import Button from '../../components/buttons/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExclamation } from '@fortawesome/free-solid-svg-icons';
+import {
+  faDroplet,
+  faExclamation,
+  faFlask,
+  faLightbulb,
+  faTree,
+} from '@fortawesome/free-solid-svg-icons';
+import FactCard from '@/components/card/FactCard';
 
 export const revalidate = 30; // revalidate every 30 seconds
 
@@ -29,13 +36,13 @@ export default async function Page() {
       <HeroTitleOnly title="The Environment is in trouble" />
 
       {/* How is it in trouble? */}
-      <Section className="grid-cols-2">
+      <Section className="grid-cols-2 !px-0 !pb-0 md:!pb-48">
         <div className="col-span-2">
           <Typography variant="h2" border className="text-center">
             How so?
           </Typography>
         </div>
-        <div className="col-span-2 lg:col-span-2">
+        <div className="col-span-2 px-4 lg:col-span-2 lg:px-0">
           <Typography variant="p" lineBreak>
             Surveys have shown that most flyers are thrown away without being
             read. Apart from the annoyance of finding a lot of unsolicited
@@ -49,6 +56,38 @@ export default async function Page() {
             in the general bin as burnable trash, flyers will not be recycled.
             Recycling or burning also requires additional energy.
           </Typography>
+        </div>
+        <div className="col-span-2 mx-auto grid max-w-screen-lg grid-cols-2 gap-0">
+          <FactCard
+            icon={faDroplet}
+            fact="1kg of paper requires up to 100L of water to make."
+            source="Source: METI website"
+            colored={true}
+          />
+          <div className="lg:order2 col-span-2 lg:col-span-1">
+            <FactCard
+              icon={faTree}
+              fact="Most of the wood pulp in Japan is imported from Vietnam, Australia or South America."
+              source="Source: WWF"
+              colored={false}
+            />
+          </div>
+          <div className="md:order3 order-last col-span-2 lg:order-none lg:col-span-1">
+            <FactCard
+              icon={faFlask}
+              fact="About 200 individuals chemicals are typically used in the papermaking process."
+              source="Source: paperonweb.com/chemical"
+              colored={false}
+            />
+          </div>
+          <div className="lg:order4 col-span-2  lg:col-span-1">
+            <FactCard
+              icon={faLightbulb}
+              fact="It takes as much electricity to make 1kg of paper as it does to run a LED light for 631 hours."
+              source="Source: Japan Paper "
+              colored={true}
+            />
+          </div>
         </div>
       </Section>
 
