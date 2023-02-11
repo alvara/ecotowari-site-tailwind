@@ -7,16 +7,25 @@ import Image from 'next/image';
 import inigochiImg from '@/assets/inogochi-profile.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
+  faGlobe,
   faPerson,
   faStar,
   faUserGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
+import { getTeam } from '@/services/repository/getTeam';
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
 export const revalidate = 30; // revalidate every 30 seconds
 
 export default async function Page() {
   const instagram = await getInstagram();
+  const team = await getTeam();
 
   return (
     <>
@@ -87,8 +96,8 @@ export default async function Page() {
           <Image
             src={inigochiImg}
             alt="Inigochi mascot"
-            width={300}
-            height={300}
+            width={250}
+            height={250}
           />
         </div>
         <div className="col-span-1 ">
@@ -113,51 +122,134 @@ export default async function Page() {
       </Section>
 
       {/* Meet The Team */}
-      <Section className="grid-cols-4">
-        <div className="col-span-4">
+      <Section className="grid-cols-3">
+        <div className="col-span-3">
           <Typography variant="h2" border className="text-center ">
             Meet the Team
           </Typography>
         </div>
+        {team.map((member) => (
+          <div className="col-span-3 text-center lg:col-span-1" key={member.id}>
+            <div
+              className="mx-auto mb-4 text-center"
+              style={{ height: 250, width: 250 }}
+            >
+              {member?.avatar?.[0].thumbnails ? (
+                <Image
+                  src={member.avatar[0].thumbnails.large.url}
+                  alt={member.name}
+                  width={250}
+                  height={250}
+                  className="mx-auto aspect-square rounded-full"
+                />
+              ) : (
+                <div
+                  className="mx-auto flex aspect-square items-center justify-center rounded-full bg-gradient-to-bl from-primary to-secondary text-8xl text-white"
+                  style={{ height: 250, width: 250 }}
+                >
+                  {member.name[0]}
+                </div>
+              )}
+            </div>
+            <Typography variant="h3" className="m-0 p-0 text-2xl">
+              {member.name}
+            </Typography>
+            <Typography variant="p" className=" mb-4 text-slate-400">
+              {member.role}
+            </Typography>
 
-        <div className="col-span-1">test</div>
-        <div className="col-span-1">test</div>
-        <div className="col-span-1">test</div>
-        <div className="col-span-1">test</div>
+            {/* SOCIALS */}
+            <div className="mb-4 flex h-8 justify-center gap-3">
+              {member.facebook && (
+                <Link href={member.facebook} target={'_blank'}>
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    size="2x"
+                    className="text-accent"
+                  />
+                </Link>
+              )}
 
-        <div className="col-span-4">
-          <Typography variant="h2" border className="text-center ">
-            To our dear supporters
-          </Typography>
-          <Typography variant="p" lineBreak>
-            Our heartfelt gratitude to Ibaraki Kiyotaka from Studio Lucky for
-            designing the sticker and the ecotowari mascot. Dear Lucky sensei,
-            thank you for your friendship, your trust and for giving Inigochi a
-            life! Follow Lucky Studio’s beautiful artwork here:
-            <Link href={'https://lucky-lucky.jp/'} target={'_blank'}>
-              https://lucky-lucky.jp/
-            </Link>
-          </Typography>
-          <Typography variant="p" lineBreak>
-            Our special thanks go out to Aska for bearing with Rémy’s 1,000
-            ideas for names and mascots, providing always great input and making
-            phone calls so we could navigate statistics and data to gain insight
-            into the world of papermaking and flyers.
-          </Typography>
-          <Typography variant="p" lineBreak>
-            We also want to aknowledge the contributions of Ayumi and Chie who
-            shared with us their insight on marketing and communication at a
-            time where ecotowari was nothing but a tiny seed.
-          </Typography>
-          <Typography variant="p" lineBreak>
-            And last but definitely not least, a massive thank you to all the
-            early supporters who gathered flyers so we could have real-world
-            data on flyer distribution and for sporting the ecotowari sticker on
-            their mailbox before it was cool!
-          </Typography>
-        </div>
+              {member.instagram && (
+                <Link href={`${member.instagram}`} target={'_blank'}>
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    size="2x"
+                    className="text-accent"
+                  />
+                </Link>
+              )}
+
+              {member.twitter && (
+                <Link href={`${member.twitter}`} target={'_blank'}>
+                  <FontAwesomeIcon
+                    icon={faTwitter}
+                    size="2x"
+                    className="text-accent"
+                  />
+                </Link>
+              )}
+
+              {member.linkedin && (
+                <Link href={`${member.linkedin}`} target={'_blank'}>
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    size="2x"
+                    className="text-accent"
+                  />
+                </Link>
+              )}
+
+              {member.website && (
+                <Link href={`${member.website}`} target={'_blank'}>
+                  <FontAwesomeIcon
+                    icon={faGlobe}
+                    size="2x"
+                    className="text-accent"
+                  />
+                </Link>
+              )}
+            </div>
+
+            <Typography variant="p" lineBreak>
+              {member.bio}
+            </Typography>
+          </div>
+        ))}
       </Section>
-      <FollowUsSection instagram={instagram} />
+
+      <Section className="pb-0" backgroundColor="bg-slate-50">
+        <Typography variant="h2" border className="text-center ">
+          To our dear supporters
+        </Typography>
+        <Typography variant="p" lineBreak>
+          Our heartfelt gratitude to Ibaraki Kiyotaka from Studio Lucky for
+          designing the sticker and the ecotowari mascot. Dear Lucky sensei,
+          thank you for your friendship, your trust and for giving Inigochi a
+          life! Follow Lucky Studio’s beautiful artwork here:
+          <Link href={'https://lucky-lucky.jp/'} target={'_blank'}>
+            https://lucky-lucky.jp/
+          </Link>
+        </Typography>
+        <Typography variant="p" lineBreak>
+          Our special thanks go out to Aska for bearing with Rémy’s 1,000 ideas
+          for names and mascots, providing always great input and making phone
+          calls so we could navigate statistics and data to gain insight into
+          the world of papermaking and flyers.
+        </Typography>
+        <Typography variant="p" lineBreak>
+          We also want to aknowledge the contributions of Ayumi and Chie who
+          shared with us their insight on marketing and communication at a time
+          where ecotowari was nothing but a tiny seed.
+        </Typography>
+        <Typography variant="p" lineBreak>
+          And last but definitely not least, a massive thank you to all the
+          early supporters who gathered flyers so we could have real-world data
+          on flyer distribution and for sporting the ecotowari sticker on their
+          mailbox before it was cool!
+        </Typography>
+      </Section>
+      <FollowUsSection instagram={instagram} backgroundColor="bg-white" />
     </>
   );
 }
