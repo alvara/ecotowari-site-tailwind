@@ -26,7 +26,7 @@ export function StatisticCard({
             <FontAwesomeIcon
               icon={faIcon}
               size="lg"
-              className="text-primary"
+              className="text-accent"
               style={{
                 width: '5rem',
                 height: '5rem',
@@ -34,7 +34,7 @@ export function StatisticCard({
             />
           </figure>
           <div className="card-body items-center text-center">
-            <Typography variant="h3" className="m-0 text-3xl text-primary">
+            <Typography variant="h3" className="m-0 text-3xl text-accent">
               {isVisible ? <CountUp end={statistic} /> : null}
               {unit}
             </Typography>
