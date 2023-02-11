@@ -1,5 +1,4 @@
 import HeroTitleOnly from '@/components/heroes/HeroTitleOnly';
-import { GetStickerSection } from '@/features/Sections/GetStickerSection';
 import { getInstagram } from '@/services/repository/getInstagram';
 import FollowUsSection from '@/features/Sections/FollowUsSection';
 import Section from '@/components/Section';
