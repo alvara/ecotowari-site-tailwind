@@ -6,6 +6,7 @@ export interface IButtonProps {
   fullWidth?: boolean;
   color?: 'primary' | 'secondary' | 'accent' | 'ghost' | 'white';
   className?: string;
+  type?: 'button' | 'submit' | 'reset';
 }
 
 export default function Button({
@@ -19,7 +20,7 @@ export default function Button({
   function selectVariant() {
     switch (variant) {
       case 'contained':
-        return 'btn-lg btn-primary';
+        return 'btn-lg btn-accent';
       case 'outlined':
         return 'btn-lg btn-outline';
       case 'text':
@@ -33,7 +34,7 @@ export default function Button({
   function selectColor() {
     switch (color) {
       case 'primary':
-        return 'btn-lg btn-primary';
+        return 'btn-lg btn-accent';
       case 'secondary':
         return 'btn-lg btn-secondary';
       case 'accent':
@@ -49,7 +50,7 @@ export default function Button({
 
   return (
     <div
-      className={`btn-lg flex w-60 cursor-pointer items-center justify-evenly rounded-full font-semibold duration-300  ${selectVariant()} ${selectColor()} ${
+      className={`btn-lg flex w-60 cursor-pointer items-center justify-evenly rounded-full font-semibold text-white duration-300 ${selectVariant()} ${selectColor()} ${
         fullWidth && 'btn-block'
       } ${className}`}
     >
