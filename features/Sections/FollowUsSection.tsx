@@ -10,11 +10,15 @@ import Section from '@/components/Section';
 
 interface IFollowUs {
   instagram: IInstagram[];
+  backgroundColor?: string;
 }
-export default function FollowUsSection({ instagram }: IFollowUs) {
+export default function FollowUsSection({
+  instagram,
+  backgroundColor,
+}: IFollowUs) {
   return (
     <Section
-      backgroundColor="bg-slate-50"
+      backgroundColor={backgroundColor ? backgroundColor : 'bg-slate-50'}
       className=""
       columns=" lg:grid-cols-4"
     >
