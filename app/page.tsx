@@ -1,26 +1,24 @@
 import Header from '@/components/Header';
-import Section from '@/components/Section';
-import IntroSection from '@/features/ContentSections/IntroSection';
-import ProfessionalSection from '@/features/ContentSections/ProfessionalSection';
+import IntroSection from '@/features/Sections/IntroSection';
+import { GetStickerSection } from '@/features/Sections/GetStickerSection';
+import StatisticsSection from '@/features/Sections/StatisticsSection';
+import { getInstagram } from '@/services/repository/getInstagram';
+import { getStickers } from '@/services/repository/getStickers';
+import FollowUsSection from '@/features/Sections/FollowUsSection';
 
 export const revalidate = 30; // revalidate every 30 seconds
 
 export default async function Page() {
+  const stickers = await getStickers();
+  const instagram = await getInstagram();
+
   return (
     <>
       <Header />
       <IntroSection />
-      <ProfessionalSection />
-      <Section
-        className="text-center lg:mb-0 lg:pb-0"
-        columns="md:grid-cols-2 lg:grid-cols-3"
-      ></Section>
-
-      <Section
-        backgroundColor="bg-white"
-        className="text-center"
-        columns="md:grid-cols-2 lg:grid-cols-3"
-      ></Section>
+      <StatisticsSection stickers={stickers} />
+      <GetStickerSection />
+      <FollowUsSection instagram={instagram} />
     </>
   );
 }
