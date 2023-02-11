@@ -1,18 +1,31 @@
 'use client';
 
 import Button from '@/components/buttons/Button';
+import yup from '@/lib/yup';
+import { yupResolver } from '@hookform/resolvers/yup';
 import axios from 'axios';
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import Modal from 'react-modal';
 
 export default function MailingListForm() {
-  const [email, setEmail] = useState('');
+  const FormSchema = yup.object({
+    email: yup.string().email('Please enter a valid email address.').required(),
+  });
+
+  const { register, handleSubmit, formState, reset } = useForm({
+    defaultValues: {
+      email: '',
+    },
+    resolver: yupResolver(FormSchema),
+  });
 
   // modal state
   const [modalIsOpen, setIsOpen] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  function onSubmit(formData) {
+    const { email } = formData;
     async function postEmail() {
       try {
         const data = await axios({
@@ -21,8 +34,8 @@ export default function MailingListForm() {
           data: { email },
         }).then((res) => {
           console.log('success submit..');
-          setEmail('');
           openModal();
+          reset();
         });
       } catch (error) {
         console.log('Error submitting form..');
@@ -55,15 +68,19 @@ export default function MailingListForm() {
 
   return (
     <div className="mx-auto text-center">
-      <form onSubmit={(e) => handleSubmit(e)} className="flex w-auto gap-2">
-        <input
-          type="email"
-          placeholder="example@email.com"
-          name="email"
-          className="flex-2 input input-lg w-full  max-w-xs rounded-full"
-          onChange={(e) => setEmail(e.currentTarget.value)}
-          value={email}
-        />
+      <form onSubmit={handleSubmit(onSubmit)} className="flex w-auto gap-2">
+        <div>
+          <input
+            {...register('email')}
+            placeholder="enter email"
+            className="flex-2 input input-lg w-full  max-w-xs rounded-full text-gray-800"
+          />
+          {formState.errors.email && (
+            <div className="text-xs text-red-500">
+              {formState.errors.email.message}
+            </div>
+          )}
+        </div>
 
         <Button
           variant="contained"
