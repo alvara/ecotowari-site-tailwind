@@ -12,6 +12,15 @@ import { faExclamation } from '@fortawesome/free-solid-svg-icons';
 
 export const revalidate = 30; // revalidate every 30 seconds
 
+function BulletIcon() {
+  return (
+    <FontAwesomeIcon
+      icon={faExclamation}
+      className="mr-2 aspect-square rounded-full bg-accent p-1  text-white"
+    />
+  );
+}
+
 export default async function Page() {
   const instagram = await getInstagram();
 
@@ -64,75 +73,51 @@ export default async function Page() {
 
           <div className="flex flex-col gap-4">
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Mining and extraction of raw materials
               </Typography>
             </div>
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Transport from the extraction place to the paper processing
                 factory
               </Typography>
             </div>
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Paper manufacturing
               </Typography>
             </div>
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Transport of that paper to printers
               </Typography>
             </div>
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Printing
               </Typography>
             </div>
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Transport of the flyer from the printer to the distribution
                 center
               </Typography>
             </div>
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Transport from the distributor to your mailbox
               </Typography>
             </div>
             <div className="flex justify-start">
-              <FontAwesomeIcon
-                icon={faExclamation}
-                className="mr-2 aspect-square rounded-full bg-primary p-1  text-white"
-              />
+              <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Recycling or incinerating the flyers which requires energy
               </Typography>
