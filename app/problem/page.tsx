@@ -211,8 +211,8 @@ export default async function Page() {
             placeholder="blur"
           />
         </div>
-        <div className="col-span-2 ">
-          <a href="/#sticker">
+        <div className="col-span-2">
+          <a href={'/#sticker'}>
             <Button variant="contained" className="mx-auto w-60">
               Get a sticker
             </Button>
