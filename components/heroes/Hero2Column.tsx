@@ -37,6 +37,8 @@ export default function Hero2Column() {
                 src={mailboxImg}
                 alt="Mailbox Improvement"
                 className="mb-14 "
+                quality={30}
+                loading="eager"
               />
             </div>
           </div>

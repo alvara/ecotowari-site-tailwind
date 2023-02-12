@@ -53,7 +53,7 @@ export default function FollowUsSection({
               width="400"
               height="400"
               alt="Instagram post"
-              quality={30}
+              quality={10}
               className="mx-auto aspect-square rounded-lg"
             />
           </Link>
