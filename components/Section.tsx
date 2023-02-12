@@ -22,7 +22,7 @@ export default function Section({
   columns = '',
   rows = '',
   backgroundColor = 'bg-white',
-  yMargins = 'py-24 lg:py-48',
+  yMargins = 'py-16 lg:py-32',
   noMargins = false,
   className,
   id,
