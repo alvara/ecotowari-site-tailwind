@@ -43,7 +43,7 @@ export default function StatisticsSection({ stickers }) {
         <div className="col-span-12 lg:col-span-4">
           <StatisticCard
             faIcon={faHouseUser}
-            statistic={totalStickers(stickers)}
+            statistic={stickers.length > 0 && totalStickers(stickers)}
             description={
               router.locale === 'en' ? 'Stickers in place' : 'ステッカー使用数'
             }
@@ -52,7 +52,7 @@ export default function StatisticsSection({ stickers }) {
         <div className="col-span-12 lg:col-span-4">
           <StatisticCard
             faIcon={faTree}
-            statistic={flyersReduced(stickers)}
+            statistic={stickers.length > 0 && flyersReduced(stickers)}
             unit="kg"
             description={
               router.locale === 'en'
@@ -64,7 +64,7 @@ export default function StatisticsSection({ stickers }) {
         <div className="col-span-12 lg:col-span-4">
           <StatisticCard
             faIcon={faLightbulb}
-            statistic={electricitySaved(stickers)}
+            statistic={stickers.length > 0 && electricitySaved(stickers)}
             unit="KWh"
             description={
               router.locale === 'en' ? 'Electricity saved' : '省エネルギー'
@@ -74,7 +74,7 @@ export default function StatisticsSection({ stickers }) {
         <div className="col-span-12 lg:col-span-4 lg:col-start-3 ">
           <StatisticCard
             faIcon={faWater}
-            statistic={waterSaved(stickers)}
+            statistic={stickers.length > 0 && waterSaved(stickers)}
             unit="L"
             description={
               router.locale === 'en' ? 'Water saved' : 'リットルの水を節約'
@@ -84,7 +84,7 @@ export default function StatisticsSection({ stickers }) {
         <div className="col-span-12 lg:col-span-4">
           <StatisticCard
             faIcon={faCloud}
-            statistic={co2Saved(stickers)}
+            statistic={stickers.length > 0 && co2Saved(stickers)}
             unit="kg-CO2e"
             description={router.locale === 'en' ? 'CO₂ saved' : '削減されたCO₂'}
           />

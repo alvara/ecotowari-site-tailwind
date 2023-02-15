@@ -45,20 +45,21 @@ export default function FollowUsSection({
           </Link>
         </div>
       </div>
-      {instagram.map((item) => (
-        <div key={item.id}>
-          <Link href={item.url} target="_blank">
-            <Image
-              src={item.image[0].thumbnails.large.url}
-              width="400"
-              height="400"
-              alt="Instagram post"
-              quality={10}
-              className="mx-auto aspect-square rounded-lg"
-            />
-          </Link>
-        </div>
-      ))}
+      {instagram.length > 0 &&
+        instagram?.map((item) => (
+          <div key={item.id}>
+            <Link href={item.url} target="_blank">
+              <Image
+                src={item.image[0].thumbnails.large.url}
+                width="400"
+                height="400"
+                alt="Instagram post"
+                quality={10}
+                className="mx-auto aspect-square rounded-lg"
+              />
+            </Link>
+          </div>
+        ))}
     </Section>
   );
 }
