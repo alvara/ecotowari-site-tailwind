@@ -24,14 +24,14 @@ export default function NavbarSimple() {
           <a href={`/#sticker`}>
             <Button
               variant="contained"
-              className="invisible lg:visible"
+              className="hidden lg:flex"
               size="btn-md"
             >
               Get a sticker
             </Button>
           </a>
 
-          <DrawerTrigger id="my-drawer" className="lg:hidden">
+          <DrawerTrigger id="my-drawer" className="cursor-pointer lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
