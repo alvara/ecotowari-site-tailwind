@@ -30,7 +30,7 @@ export default function Drawer({ id, children }: IDrawerProps) {
           </li>
           <NavMenu />
           <li>
-            <a href="/#sticker" className="justify-center">
+            <a href={`${process.env.HOST}/#sticker`} className="justify-center">
               <Button variant="contained">Get a sticker</Button>
             </a>
           </li>

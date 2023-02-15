@@ -22,7 +22,7 @@ export default function Hero2Column() {
               Free your mailbox from unsolicited flyers with this real-life spam
               filter!
             </Typography>
-            <a href={'/#sticker'}>
+            <a href={`${process.env.HOST}/#sticker`}>
               <Button
                 variant="contained"
                 className="relative mx-auto w-60 lg:mx-0"
