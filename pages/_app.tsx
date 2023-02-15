@@ -42,7 +42,8 @@ export default function MyApp({
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         <title>
           {router.pathname.replace('/', '').charAt(0).toUpperCase() +
-            router.pathname.slice(2)}
+            router.pathname.slice(2)}{' '}
+          | ecotowari
         </title>
       </Head>
       <main className={`${nunito.className} `}>
