@@ -145,7 +145,7 @@ export default async function Page() {
           />
         </div>
         <div className="col-span-2 ">
-          <a href="/#sticker">
+          <a href={`${process.env.HOST}/#sticker`}>
             <Button variant="contained" className="mx-auto w-60">
               Get a sticker
             </Button>
