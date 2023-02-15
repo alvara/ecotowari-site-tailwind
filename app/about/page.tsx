@@ -129,94 +129,98 @@ export default async function Page() {
             Meet the Team
           </Typography>
         </div>
-        {team.map((member) => (
-          <div className="col-span-3 text-center lg:col-span-1" key={member.id}>
+        {team.length > 0 &&
+          team?.map((member) => (
             <div
-              className="mx-auto mb-4 text-center"
-              style={{ height: 250, width: 250 }}
+              className="col-span-3 text-center lg:col-span-1"
+              key={member.id}
             >
-              {member?.avatar?.[0].thumbnails ? (
-                <Image
-                  src={member.avatar[0].thumbnails.large.url}
-                  alt={member.name}
-                  width={250}
-                  height={250}
-                  className="mx-auto aspect-square rounded-full"
-                />
-              ) : (
-                <div
-                  className="mx-auto flex aspect-square items-center justify-center rounded-full bg-gradient-to-bl from-primary to-secondary text-8xl text-white"
-                  style={{ height: 250, width: 250 }}
-                >
-                  {member.name[0]}
-                </div>
-              )}
+              <div
+                className="mx-auto mb-4 text-center"
+                style={{ height: 250, width: 250 }}
+              >
+                {member?.avatar?.[0].thumbnails ? (
+                  <Image
+                    src={member.avatar[0].thumbnails.large.url}
+                    alt={member.name}
+                    width={250}
+                    height={250}
+                    className="mx-auto aspect-square rounded-full"
+                  />
+                ) : (
+                  <div
+                    className="mx-auto flex aspect-square items-center justify-center rounded-full bg-gradient-to-bl from-primary to-secondary text-8xl text-white"
+                    style={{ height: 250, width: 250 }}
+                  >
+                    {member.name[0]}
+                  </div>
+                )}
+              </div>
+              <Typography variant="h3" className="m-0 p-0 text-2xl">
+                {member.name}
+              </Typography>
+              <Typography variant="p" className=" mb-4 text-slate-400">
+                {member.role}
+              </Typography>
+
+              {/* SOCIALS */}
+              <div className="mb-4 flex h-8 justify-center gap-3">
+                {member.facebook && (
+                  <Link href={member.facebook} target={'_blank'}>
+                    <FontAwesomeIcon
+                      icon={faFacebook}
+                      size="2x"
+                      className="text-accent"
+                    />
+                  </Link>
+                )}
+
+                {member.instagram && (
+                  <Link href={`${member.instagram}`} target={'_blank'}>
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      size="2x"
+                      className="text-accent"
+                    />
+                  </Link>
+                )}
+
+                {member.twitter && (
+                  <Link href={`${member.twitter}`} target={'_blank'}>
+                    <FontAwesomeIcon
+                      icon={faTwitter}
+                      size="2x"
+                      className="text-accent"
+                    />
+                  </Link>
+                )}
+
+                {member.linkedin && (
+                  <Link href={`${member.linkedin}`} target={'_blank'}>
+                    <FontAwesomeIcon
+                      icon={faLinkedin}
+                      size="2x"
+                      className="text-accent"
+                    />
+                  </Link>
+                )}
+
+                {member.website && (
+                  <Link href={`${member.website}`} target={'_blank'}>
+                    <FontAwesomeIcon
+                      icon={faGlobe}
+                      size="2x"
+                      className="text-accent"
+                    />
+                  </Link>
+                )}
+              </div>
+
+              <Typography variant="p" lineBreak>
+                {member.bio}
+              </Typography>
             </div>
-            <Typography variant="h3" className="m-0 p-0 text-2xl">
-              {member.name}
-            </Typography>
-            <Typography variant="p" className=" mb-4 text-slate-400">
-              {member.role}
-            </Typography>
-
-            {/* SOCIALS */}
-            <div className="mb-4 flex h-8 justify-center gap-3">
-              {member.facebook && (
-                <Link href={member.facebook} target={'_blank'}>
-                  <FontAwesomeIcon
-                    icon={faFacebook}
-                    size="2x"
-                    className="text-accent"
-                  />
-                </Link>
-              )}
-
-              {member.instagram && (
-                <Link href={`${member.instagram}`} target={'_blank'}>
-                  <FontAwesomeIcon
-                    icon={faInstagram}
-                    size="2x"
-                    className="text-accent"
-                  />
-                </Link>
-              )}
-
-              {member.twitter && (
-                <Link href={`${member.twitter}`} target={'_blank'}>
-                  <FontAwesomeIcon
-                    icon={faTwitter}
-                    size="2x"
-                    className="text-accent"
-                  />
-                </Link>
-              )}
-
-              {member.linkedin && (
-                <Link href={`${member.linkedin}`} target={'_blank'}>
-                  <FontAwesomeIcon
-                    icon={faLinkedin}
-                    size="2x"
-                    className="text-accent"
-                  />
-                </Link>
-              )}
-
-              {member.website && (
-                <Link href={`${member.website}`} target={'_blank'}>
-                  <FontAwesomeIcon
-                    icon={faGlobe}
-                    size="2x"
-                    className="text-accent"
-                  />
-                </Link>
-              )}
-            </div>
-
-            <Typography variant="p" lineBreak>
-              {member.bio}
-            </Typography>
-          </div>
-        ))}
+          ))}
       </Section>
 
       <Section className="pb-0" backgroundColor="bg-slate-50">
@@ -250,7 +254,9 @@ export default async function Page() {
           mailbox before it was cool!
         </Typography>
       </Section>
-      <FollowUsSection instagram={instagram} backgroundColor="bg-white" />
+      {instagram.length > 0 && (
+        <FollowUsSection instagram={instagram} backgroundColor="bg-white" />
+      )}
     </>
   );
 }
