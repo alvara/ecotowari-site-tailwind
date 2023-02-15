@@ -49,7 +49,7 @@ export default async function Page() {
             className="rounded-lg"
             quality={15}
             placeholder="blur"
-            loading="eager"
+            priority
           />
         </div>
       </Section>
@@ -68,7 +68,7 @@ export default async function Page() {
             className="rounded-lg"
             quality={15}
             placeholder="blur"
-            loading="eager"
+            priority
           />
         </div>
         <div className="col-span-2 lg:col-span-1">
@@ -141,7 +141,7 @@ export default async function Page() {
             className="rounded-lg"
             quality={15}
             placeholder="blur"
-            loading="eager"
+            priority
           />
         </div>
         <div className="col-span-2 ">

@@ -13,7 +13,12 @@ export function GetStickerSection() {
       <Typography variant="h2" className="text-center text-white" border>
         You can help
       </Typography>
-      <Image src={stickerImg} alt="sticker preview" className="mx-auto mb-8" />
+      <Image
+        src={stickerImg}
+        alt="sticker preview"
+        className="mx-auto mb-8"
+        priority
+      />
       <Typography variant="body1" className="text-white">
         If you feel like your mailbox is being flooded with flyers and want to
         do yourself and the planet a favour, look no further.
