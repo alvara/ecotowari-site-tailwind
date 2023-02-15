@@ -42,7 +42,7 @@
     "react-modal": "^3.16.1",
     "react-visibility-sensor": "^5.1.1",
     "server-only": "^0.0.1",
-    "sharp": "^0.30.3",
+    "sharp": "^0.31.3",
     "uuid-validate": "^0.0.3",
     "yup": "^1.0.0"
   },
