@@ -104,7 +104,7 @@ export default async function Page() {
             alt="Lifecycle of a flyer"
             className="rounded-lg xl:pr-32"
             quality={30}
-            placeholder="blur"
+            priority
           />
         </div>
         <div className="col-span-3 flex flex-col justify-start xl:col-span-1">
@@ -205,10 +205,10 @@ export default async function Page() {
         <div className="col-span-2 mx-auto lg:col-span-1">
           <Image
             src={mailBoxesSolution}
-            alt="Mailboxes full of flyers"
+            alt="What Makes ecotowari unique"
             className="rounded-lg"
-            quality={15}
-            placeholder="blur"
+            quality={12}
+            priority
           />
         </div>
         <div className="col-span-2">

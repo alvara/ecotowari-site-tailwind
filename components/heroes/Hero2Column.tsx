@@ -38,7 +38,7 @@ export default function Hero2Column() {
                 alt="Mailbox Improvement"
                 className="mb-14 "
                 quality={30}
-                loading="eager"
+                priority
               />
             </div>
           </div>

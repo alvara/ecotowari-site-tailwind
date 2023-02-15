@@ -98,6 +98,7 @@ export default async function Page() {
             alt="Inigochi mascot"
             width={250}
             height={250}
+            priority
           />
         </div>
         <div className="col-span-1 ">
