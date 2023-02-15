@@ -21,7 +21,7 @@ import {
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
 
-export const revalidate = 30; // revalidate every 30 seconds
+// export const revalidate = 30; // revalidate every 30 seconds
 
 export default async function Page() {
   const instagram = await getInstagram();
