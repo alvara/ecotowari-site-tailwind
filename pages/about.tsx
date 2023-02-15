@@ -163,7 +163,7 @@ export default function AboutPage({
                 className="mx-auto mb-4 text-center"
                 style={{ height: 250, width: 250 }}
               >
-                {member?.avatar?.[0].thumbnails ? (
+                {member?.avatar?.[0]?.thumbnails ? (
                   <Image
                     src={member.avatar[0].thumbnails.large.url}
                     alt={member.name}
@@ -189,12 +189,12 @@ export default function AboutPage({
 
               {/* SOCIALS */}
               <div className="mb-4 flex h-8 justify-center gap-3">
-                {member.facebook && (
+                {member?.facebook && (
                   <Link href={member.facebook} target={'_blank'}>
                     <FontAwesomeIcon
                       icon={faFacebook}
                       size="2x"
-                      className="text-accent"
+                      className="w-8 text-accent"
                     />
                   </Link>
                 )}
@@ -204,7 +204,7 @@ export default function AboutPage({
                     <FontAwesomeIcon
                       icon={faInstagram}
                       size="2x"
-                      className="text-accent"
+                      className="w-8 text-accent"
                     />
                   </Link>
                 )}
@@ -214,7 +214,7 @@ export default function AboutPage({
                     <FontAwesomeIcon
                       icon={faTwitter}
                       size="2x"
-                      className="text-accent"
+                      className="w-8 text-accent"
                     />
                   </Link>
                 )}
@@ -224,7 +224,7 @@ export default function AboutPage({
                     <FontAwesomeIcon
                       icon={faLinkedin}
                       size="2x"
-                      className="text-accent"
+                      className="w-8 text-accent"
                     />
                   </Link>
                 )}
@@ -234,7 +234,7 @@ export default function AboutPage({
                     <FontAwesomeIcon
                       icon={faGlobe}
                       size="2x"
-                      className="text-accent"
+                      className="w-8 text-accent"
                     />
                   </Link>
                 )}
