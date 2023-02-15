@@ -17,18 +17,18 @@ export const getTeam = async () => {
 
   records.forEach(({ fields }) => {
     data.push({
-      id: fields.Id as number,
-      name: fields.name as string,
-      email: fields.email as string,
-      linkedin: fields.linkedin as string,
-      facebook: fields.facebook as string,
-      instagram: fields.instagram as string,
-      twitter: fields.twitter as string,
-      github: fields.github as string,
-      website: fields.website as string,
-      role: fields.role as string,
-      avatar: fields.avatar as IAirtableImage[],
-      bio: fields.bio as string,
+      id: (fields.Id as number) || null,
+      name: (fields.name as string) || null,
+      email: (fields.email as string) || null,
+      linkedin: (fields.linkedin as string) || null,
+      facebook: (fields.facebook as string) || null,
+      instagram: (fields.instagram as string) || null,
+      twitter: (fields.twitter as string) || null,
+      github: (fields.github as string) || null,
+      website: (fields.website as string) || null,
+      role: (fields.role as string) || null,
+      avatar: (fields.avatar as IAirtableImage[]) || null,
+      bio: (fields.bio as string) || null,
     });
   });
 
