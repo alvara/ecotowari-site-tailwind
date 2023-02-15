@@ -21,7 +21,7 @@ export default function NavbarSimple() {
           </ul>
         </div>
         <div className="navbar-end">
-          <a href={`${process.env.HOST}/#sticker`}>
+          <a href={`/#sticker`}>
             <Button
               variant="contained"
               className="invisible lg:visible"

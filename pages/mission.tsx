@@ -8,13 +8,20 @@ import Image from 'next/image';
 import mailBoxesFullImg from '@/assets/mailboxes-full.jpeg';
 import mailBoxesQuickFixImg from '@/assets/mailboxes-quick-fix.jpeg';
 import mailBoxesSolution from '@/assets/mailboxes-ecotowari-solution.png';
-import Button from '../../components/buttons/Button';
+import Button from '@/components/buttons/Button';
 
-export const revalidate = 30; // revalidate every 30 seconds
-
-export default async function Page() {
+export const getStaticProps = async () => {
   const instagram = await getInstagram();
 
+  return {
+    props: {
+      instagram,
+    },
+    revalidate: 30, // revalidate every 30 seconds
+  };
+};
+
+export default function MissionPage({ instagram }) {
   return (
     <>
       <HeroTitleOnly title="Our Mission" />
@@ -145,7 +152,7 @@ export default async function Page() {
           />
         </div>
         <div className="col-span-2 ">
-          <a href={`${process.env.HOST}/#sticker`}>
+          <a href={`/#sticker`}>
             <Button variant="contained" className="mx-auto w-60">
               Get a sticker
             </Button>

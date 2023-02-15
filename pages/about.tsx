@@ -20,13 +20,29 @@ import {
   faLinkedin,
   faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
+import { ITeam } from '../type';
+import { IInstagram } from 'types';
 
-export const revalidate = 5; // revalidate every X seconds
-
-export default async function Page() {
+export const getStaticProps = async () => {
   const instagram = await getInstagram();
   const team = await getTeam();
 
+  return {
+    props: {
+      instagram,
+      team,
+    },
+    revalidate: 30, // revalidate every 30 seconds
+  };
+};
+
+export default function AboutPage({
+  instagram,
+  team,
+}: {
+  instagram: IInstagram[];
+  team: ITeam[];
+}) {
   return (
     <>
       <HeroTitleOnly title="About Us" />
@@ -40,7 +56,11 @@ export default async function Page() {
         </div>
 
         <div className="col-span-3 mx-auto flex flex-col gap-0 align-middle lg:col-span-1">
-          <FontAwesomeIcon icon={faPerson} size="3x" className="text-accent" />
+          <FontAwesomeIcon
+            icon={faPerson}
+            size="3x"
+            className="mx-auto h-20 w-20 text-accent"
+          />
           <Typography variant="h3" className="text-center">
             Every Individual Matters
           </Typography>
@@ -49,14 +69,18 @@ export default async function Page() {
           <FontAwesomeIcon
             icon={faUserGroup}
             size="3x"
-            className="text-accent"
+            className="mx-auto h-20 w-20 text-accent"
           />
           <Typography variant="h3" className="text-center">
             United On A Collective Interest
           </Typography>
         </div>
         <div className="col-span-3 mx-auto flex flex-col gap-0 align-middle lg:col-span-1">
-          <FontAwesomeIcon icon={faStar} size="3x" className="text-accent" />
+          <FontAwesomeIcon
+            icon={faStar}
+            size="3x"
+            className="mx-auto h-20 w-20 text-accent"
+          />
           <Typography variant="h3" className="text-center">
             Less is More
           </Typography>
@@ -130,10 +154,10 @@ export default async function Page() {
           </Typography>
         </div>
         {team.length > 0 &&
-          team?.map((member) => (
+          team.map((member) => (
             <div
               className="col-span-3 text-center lg:col-span-1"
-              key={member.id}
+              key={member.id || 0}
             >
               <div
                 className="mx-auto mb-4 text-center"
@@ -195,7 +219,7 @@ export default async function Page() {
                   </Link>
                 )}
 
-                {member.linkedin && (
+                {member?.linkedin && (
                   <Link href={`${member.linkedin}`} target={'_blank'}>
                     <FontAwesomeIcon
                       icon={faLinkedin}

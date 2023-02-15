@@ -3,9 +3,7 @@ import Section from '@/components/Section';
 import { Typography } from '@/components/Typography';
 import ContactForm from '@/features/forms/ContactForm';
 
-export const revalidate = 30; // revalidate every 30 seconds
-
-export default async function Page() {
+export default function ContactPage() {
   return (
     <>
       <HeroTitleOnly title="Contact Us" />

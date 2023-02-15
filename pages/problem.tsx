@@ -6,11 +6,9 @@ import { Typography } from '@/components/Typography';
 import Image from 'next/image';
 import flyerLifecycleImg from '@/assets/flyer-lifecycle-trimmy.png';
 import mailBoxesSolution from '@/assets/mailboxes-ecotowari-solution.png';
-import Button from '../../components/buttons/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Button from '../components/buttons/Button';
 import {
   faDroplet,
-  faExclamation,
   faFlask,
   faLightbulb,
   faTree,
@@ -20,17 +18,21 @@ import FactCard from '@/components/card/FactCard';
 export const revalidate = 30; // revalidate every 30 seconds
 
 function BulletIcon() {
-  return (
-    <FontAwesomeIcon
-      icon={faExclamation}
-      className="mr-2 aspect-square rounded-full bg-accent p-1  text-white"
-    />
-  );
+  return <div className="text-xl text-accent">・</div>;
 }
 
-export default async function Page() {
+export const getStaticProps = async () => {
   const instagram = await getInstagram();
 
+  return {
+    props: {
+      instagram,
+    },
+    revalidate: 30, // revalidate every 30 seconds
+  };
+};
+
+export default function ProblemPage({ instagram }) {
   return (
     <>
       <HeroTitleOnly title="The Environment is in trouble" />
@@ -98,22 +100,22 @@ export default async function Page() {
             The lifecycle of flyers
           </Typography>
         </div>
-        <div className="col-span-3 mx-auto xl:col-span-2">
+        <div className="col-span-3 mx-auto lg:col-span-2">
           <Image
             src={flyerLifecycleImg}
             alt="Lifecycle of a flyer"
-            className="rounded-lg xl:pr-32"
+            className="rounded-lg lg:pr-32"
             quality={30}
             priority
           />
         </div>
-        <div className="col-span-3 flex flex-col justify-start xl:col-span-1">
+        <div className="col-span-3 flex flex-col justify-start lg:col-span-1">
           <Typography variant="h3" lineBreak className="text-xl">
             The overall environmental footprint of a flyer can be decomposed as:
           </Typography>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex justify-start">
+          <div className="flex flex-col gap-4 ">
+            <div className="flex  justify-start">
               <BulletIcon />
               <Typography variant="p" className="m-0 p-0">
                 Mining and extraction of raw materials
@@ -212,7 +214,7 @@ export default async function Page() {
           />
         </div>
         <div className="col-span-2">
-          <a href={`${process.env.HOST}/#sticker`}>
+          <a href={`/#sticker`}>
             <Button variant="contained" className="mx-auto w-60">
               Get a sticker
             </Button>

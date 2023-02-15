@@ -24,9 +24,7 @@ export default function FactCard({
     >
       <FontAwesomeIcon
         icon={icon}
-        inverse
-        size="9x"
-        className={`mx-auto text-center ${
+        className={`mx-auto w-16 text-center ${
           colored ? 'text-white' : 'text-accent'
         }`}
       />
