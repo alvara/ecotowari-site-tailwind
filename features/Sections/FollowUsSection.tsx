@@ -6,14 +6,14 @@ import Link from 'next/link';
 import { Typography } from '@/components/Typography';
 import Section from '@/components/Section';
 
-interface IFollowUs {
+interface FollowUsSectionProps {
   instagram: IInstagram[];
   backgroundColor?: string;
 }
 export default function FollowUsSection({
   instagram,
   backgroundColor,
-}: IFollowUs) {
+}: FollowUsSectionProps) {
   // filter instagram posts only if have large thumbnail url
   const instagramWithUrl = instagram.filter(
     (item) => item.image[0].thumbnails.large.url
