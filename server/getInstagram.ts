@@ -10,9 +10,9 @@ export const getInstagram = async () => {
   const table = base('Instagram');
   const records = await table.select().all();
 
-  records.forEach(({ fields }) => {
+  records.forEach(({ id, fields }) => {
     data.push({
-      id: fields.Id as number,
+      id: id as string,
       image: fields.Image as IAirtableImage[],
       publishDate: fields.PublishDate as string,
       notes: (fields.Notes as string) || '',
