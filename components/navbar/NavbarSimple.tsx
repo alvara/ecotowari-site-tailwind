@@ -31,7 +31,10 @@ export default function NavbarSimple() {
             </Button>
           </a>
 
-          <DrawerTrigger id="my-drawer" className="cursor-pointer lg:hidden">
+          <DrawerTrigger
+            id="my-drawer"
+            className="cursor-pointer px-4 lg:hidden "
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
