@@ -14,10 +14,15 @@ export default function FollowUsSection({
   instagram,
   backgroundColor,
 }: IFollowUs) {
+  // filter instagram posts only if have large thumbnail url
+  const instagramWithUrl = instagram.filter(
+    (item) => item.image[0].thumbnails.large.url
+  );
+
   return (
     <Section
       backgroundColor={backgroundColor ? backgroundColor : 'bg-slate-50'}
-      columns="md:grid-cols-4"
+      columns="grid-cols-4"
     >
       <div className="col-span-4 lg:col-span-4">
         <Typography variant="h2" className="text-center" border>
@@ -42,9 +47,9 @@ export default function FollowUsSection({
           </Link>
         </div>
       </div>
-      {instagram.length > 0 &&
-        instagram?.map((item) => (
-          <div key={item.id}>
+      {instagramWithUrl.length > 0 &&
+        instagramWithUrl?.map((item) => (
+          <div key={item.id} className="col-span-2 md:col-span-1">
             <Link href={item.url} target="_blank">
               <Image
                 src={item.image[0].thumbnails.large.url}
