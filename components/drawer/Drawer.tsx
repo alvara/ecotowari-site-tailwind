@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 import Button from '../buttons/Button';
 import NavMenu from '../navbar/NavMenu';
 
@@ -8,6 +10,10 @@ export interface IDrawerProps {
 }
 
 export default function Drawer({ id, children }: IDrawerProps) {
+  function closeDrawer() {
+    document.getElementById(id).click();
+  }
+
   return (
     <div className="drawer drawer-end">
       {/* Hidden toggle for sidebar */}
@@ -24,13 +30,21 @@ export default function Drawer({ id, children }: IDrawerProps) {
             <span>Menu</span>
           </li>
           <li>
-            <Link href="/" className="justify-center">
+            <Link
+              href="/"
+              className="justify-center"
+              onClick={() => closeDrawer()}
+            >
               Home
             </Link>
           </li>
-          <NavMenu />
+          <NavMenu closeDrawer={closeDrawer} />
           <li>
-            <a href={`/#sticker`} className="justify-center">
+            <a
+              href={`/#sticker`}
+              className="justify-center"
+              onClick={() => closeDrawer()}
+            >
               <Button variant="contained">Get a sticker</Button>
             </a>
           </li>
