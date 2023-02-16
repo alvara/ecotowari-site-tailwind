@@ -36,15 +36,17 @@ export default function MyApp({
   pageProps,
   router,
 }: AppPropsWithLayout) {
+  const pageTitle =
+    router.pathname === '/'
+      ? 'Home | ecotowari'
+      : router.pathname.replace('/', '').charAt(0).toUpperCase() +
+        router.pathname.slice(2) +
+        ' | ecotowari';
   return (
     <>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <title>
-          {router.pathname.replace('/', '').charAt(0).toUpperCase() +
-            router.pathname.slice(2)}{' '}
-          | ecotowari
-        </title>
+        <title>{pageTitle}</title>
       </Head>
       <main className={`${nunito.className} `}>
         <Drawer id="my-drawer">
@@ -55,7 +57,7 @@ export default function MyApp({
             </div>
             <Footer />
           </div>
-        </Drawer>{' '}
+        </Drawer>
       </main>
     </>
   );
