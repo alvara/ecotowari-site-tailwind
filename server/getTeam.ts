@@ -15,9 +15,9 @@ export const getTeam = async () => {
     })
     .all();
 
-  records.forEach(({ fields }) => {
+  records.forEach(({ id, fields }) => {
     data.push({
-      id: (fields.Id as number) || null,
+      id: id as string,
       name: (fields.name as string) || null,
       email: (fields.email as string) || null,
       linkedin: (fields.linkedin as string) || null,

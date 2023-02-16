@@ -11,7 +11,7 @@ export interface ISticker {
 }
 
 export interface ITeam {
-  id: number;
+  id: string;
   name: string;
   email?: string;
   linkedin?: string;
@@ -26,7 +26,7 @@ export interface ITeam {
 }
 
 export interface IInstagram {
-  id: number;
+  id: string;
   image: IAirtableImage[];
   notes?: string;
   publishDate: string;
