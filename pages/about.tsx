@@ -116,14 +116,8 @@ export default function AboutPage({
         <Typography variant="h2" border className="text-center ">
           Meet Inigochi
         </Typography>
-        <div className="mx-auto">
-          <Image
-            src={inigochiImg}
-            alt="Inigochi mascot"
-            width={250}
-            height={250}
-            priority
-          />
+        <div className="mx-auto max-w-xs px-8">
+          <Image src={inigochiImg} alt="Inigochi mascot" priority />
         </div>
         <div className="col-span-1 ">
           <Typography variant="p" lineBreak>
@@ -157,7 +151,7 @@ export default function AboutPage({
           team.map((member) => (
             <div
               className="col-span-3 text-center lg:col-span-1"
-              key={member.id || 0}
+              key={member.id}
             >
               <div
                 className="mx-auto mb-4 text-center"
