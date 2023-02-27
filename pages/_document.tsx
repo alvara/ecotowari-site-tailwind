@@ -8,6 +8,11 @@ export default function Document() {
     <Html>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* meta description for ecotowari project */}
+        <meta
+          name="description"
+          content="Ecotowari is a project that aims to help the community by reducing waste from unsolicited flyers and advertisements in mailboxes."
+        />
         <link rel="icon" href="/favicon.ico" />
 
         <link
