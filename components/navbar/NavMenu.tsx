@@ -1,6 +1,10 @@
 import Link from 'next/link';
 
-export default function NavMenu({ closeDrawer }: { closeDrawer?: () => void }) {
+export default function NavMenu({ id }: { id?: string }) {
+  function closeDrawer() {
+    if (!id) return;
+    document.getElementById(id).click();
+  }
   return (
     <>
       <li>
