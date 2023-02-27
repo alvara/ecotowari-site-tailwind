@@ -20,7 +20,7 @@ export default function ContactPage() {
           <Typography variant="p">
             We will do our best to get back to as soon as we can. Thank you!
           </Typography>
-          <div className="m-2 md:m-8">
+          <div className="m-2 lg:m-8">
             <ContactForm />
           </div>
         </div>
