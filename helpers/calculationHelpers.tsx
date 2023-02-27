@@ -1,6 +1,8 @@
 import dayjs from 'dayjs';
 import { ISticker } from 'types';
 
+export const avgWastePerWeek = 100;
+
 // return total number of days for all stickers in existence
 export function totalDaysDeployed(stickers: ISticker[] = []): number {
   const now = dayjs();
@@ -28,7 +30,6 @@ export function totalStickers(stickers: ISticker[]): number {
 
 // returns avg weight of flyers wasted per day
 export function avgWastePerDay(): number {
-  const avgWastePerWeek = 100; // TODO: calc avg weight of flyers wasted per week through studies
   return avgWastePerWeek / 7;
 }
 
