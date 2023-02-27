@@ -10,7 +10,7 @@ export default function NavbarSimple() {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn-ghost btn text-4xl normal-case text-primary"
+            className="btn-ghost btn text-4xl normal-case text-primary hover:bg-transparent"
           >
             ecotowari
           </Link>
