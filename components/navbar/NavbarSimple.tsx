@@ -10,7 +10,7 @@ export default function NavbarSimple() {
         <div className="navbar-start">
           <Link
             href="/"
-            className="btn-ghost btn text-4xl normal-case text-primary"
+            className="btn-ghost btn text-4xl normal-case text-primary hover:bg-transparent"
           >
             ecotowari
           </Link>
@@ -34,6 +34,7 @@ export default function NavbarSimple() {
           <DrawerTrigger
             id="my-drawer"
             className="cursor-pointer px-4 lg:hidden "
+            aria-label="Open Menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

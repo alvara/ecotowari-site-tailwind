@@ -32,7 +32,7 @@ export const getStaticProps = async () => {
       instagram,
       team,
     },
-    revalidate: 30, // revalidate every 30 seconds
+    revalidate: 259200, // revalidate every 3 days
   };
 };
 
@@ -184,7 +184,11 @@ export default function AboutPage({
               {/* SOCIALS */}
               <div className="mb-4 flex h-8 justify-center gap-3">
                 {member?.facebook && (
-                  <Link href={member.facebook} target={'_blank'}>
+                  <Link
+                    href={member.facebook}
+                    target={'_blank'}
+                    aria-label={`facebook for ${member.name}`}
+                  >
                     <FontAwesomeIcon
                       icon={faFacebook}
                       size="2x"
@@ -194,7 +198,11 @@ export default function AboutPage({
                 )}
 
                 {member.instagram && (
-                  <Link href={`${member.instagram}`} target={'_blank'}>
+                  <Link
+                    href={`${member.instagram}`}
+                    target={'_blank'}
+                    aria-label={`instagram for ${member.name}`}
+                  >
                     <FontAwesomeIcon
                       icon={faInstagram}
                       size="2x"
@@ -204,7 +212,11 @@ export default function AboutPage({
                 )}
 
                 {member.twitter && (
-                  <Link href={`${member.twitter}`} target={'_blank'}>
+                  <Link
+                    href={`${member.twitter}`}
+                    target={'_blank'}
+                    aria-label={`twitter for ${member.name}`}
+                  >
                     <FontAwesomeIcon
                       icon={faTwitter}
                       size="2x"
@@ -214,7 +226,11 @@ export default function AboutPage({
                 )}
 
                 {member?.linkedin && (
-                  <Link href={`${member.linkedin}`} target={'_blank'}>
+                  <Link
+                    href={`${member.linkedin}`}
+                    target={'_blank'}
+                    aria-label={`linkedin for ${member.name}`}
+                  >
                     <FontAwesomeIcon
                       icon={faLinkedin}
                       size="2x"
@@ -224,7 +240,11 @@ export default function AboutPage({
                 )}
 
                 {member.website && (
-                  <Link href={`${member.website}`} target={'_blank'}>
+                  <Link
+                    href={`${member.website}`}
+                    target={'_blank'}
+                    aria-label={`website for ${member.name}`}
+                  >
                     <FontAwesomeIcon
                       icon={faGlobe}
                       size="2x"

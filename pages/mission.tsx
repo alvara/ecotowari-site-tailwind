@@ -30,7 +30,7 @@ export default function MissionPage({ instagram }) {
       <Section className="grid-cols-2">
         <div className="col-span-2">
           <Typography variant="h2" border className="text-center">
-            Our Mission
+            The Why Behind Our Work
           </Typography>
         </div>
         <div className="col-span-2 lg:col-span-1">

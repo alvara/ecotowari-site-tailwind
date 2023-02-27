@@ -36,7 +36,7 @@ export default function Drawer({ id, children }: IDrawerProps) {
               Home
             </Link>
           </li>
-          <NavMenu closeDrawer={closeDrawer} />
+          <NavMenu id={id} />
           <li>
             <a
               href={`/#sticker`}
