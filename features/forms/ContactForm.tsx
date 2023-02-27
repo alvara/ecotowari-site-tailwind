@@ -71,7 +71,7 @@ export default function ContactForm() {
 
   return (
     <>
-      <div className="card mx-auto w-full bg-base-100 p-16 shadow-xl">
+      <div className="card mx-auto w-full bg-base-100 p-8 shadow-xl md:p-16">
         <h2 className="card-title"></h2>
         <Typography variant="h2">Contact Form</Typography>
         <form onSubmit={handleSubmit(onSubmit)} className="card">
