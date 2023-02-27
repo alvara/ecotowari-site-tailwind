@@ -34,6 +34,7 @@ export default function NavbarSimple() {
           <DrawerTrigger
             id="my-drawer"
             className="cursor-pointer px-4 lg:hidden "
+            aria-label="Open Menu"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
