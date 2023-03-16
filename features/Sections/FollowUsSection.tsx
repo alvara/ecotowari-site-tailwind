@@ -5,6 +5,8 @@ import { IInstagram } from '../../type';
 import Link from 'next/link';
 import { Typography } from '@/components/Typography';
 import Section from '@/components/Section';
+import { getInstagram } from '../../server/getInstagram';
+import { useState } from 'react';
 
 interface FollowUsSectionProps {
   instagram: IInstagram[];
@@ -14,10 +16,19 @@ export default function FollowUsSection({
   instagram,
   backgroundColor,
 }: FollowUsSectionProps) {
-  // filter instagram posts only if have large thumbnail url
-  const instagramWithUrl = instagram.filter(
-    (item) => item.image[0].thumbnails.large.url
+  const [instagramWithUrl, setInstagramWithUrl] = useState<IInstagram[]>(
+    filterLargeThumbnails(instagram)
   );
+
+  // filter instagram posts only if have large thumbnail url
+  function filterLargeThumbnails(instagram: IInstagram[]) {
+    return instagram.filter((item) => item.image[0].thumbnails.large.url);
+  }
+
+  async function refetchData() {
+    const newInstagram = await getInstagram();
+    setInstagramWithUrl(filterLargeThumbnails(newInstagram));
+  }
 
   return (
     <Section
@@ -58,6 +69,7 @@ export default function FollowUsSection({
                 alt="Instagram post"
                 quality={2}
                 className="mx-auto aspect-square rounded-lg"
+                onError={refetchData}
               />
             </Link>
           </div>

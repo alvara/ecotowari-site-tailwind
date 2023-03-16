@@ -22,6 +22,7 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { ITeam } from '../type';
 import { IInstagram } from 'types';
+import { useState } from 'react';
 
 export const getStaticProps = async () => {
   const instagram = await getInstagram();
@@ -43,6 +44,13 @@ export default function AboutPage({
   instagram: IInstagram[];
   team: ITeam[];
 }) {
+  const [fallbackProfilePics, setFallbackProfilePics] =
+    useState<boolean>(false);
+
+  const onImageError = (e) => {
+    e.target.src = setFallbackProfilePics(true);
+  };
+
   return (
     <>
       <HeroTitleOnly title="About Us" />
@@ -157,7 +165,8 @@ export default function AboutPage({
                 className="mx-auto mb-4 text-center"
                 style={{ height: 250, width: 250 }}
               >
-                {member?.avatar?.[0]?.thumbnails ? (
+                {member?.avatar?.[0]?.thumbnails &&
+                fallbackProfilePics === false ? (
                   <Image
                     src={member.avatar[0].thumbnails.large.url}
                     alt={member.name}
